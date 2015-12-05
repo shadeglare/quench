@@ -12,7 +12,8 @@
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "./bin"
     },
     "filesGlob": [
         "**/*.ts",
@@ -27,8 +28,5 @@
         "singleton.ts",
         "stack.ts",
         "types.ts"
-    ],
-    "atom": {
-        "rewriteTsconfig": true
-    }
+    ]
 }
