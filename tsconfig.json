@@ -23,7 +23,6 @@
     "files": [
         "check.ts",
         "index.ts",
-        "main.ts",
         "queue.ts",
         "singleton.ts",
         "stack.ts",
