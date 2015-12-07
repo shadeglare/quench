@@ -4,11 +4,13 @@ import * as Types from "./types";
 
 import Queue from "./queue";
 import Stack from "./stack";
+import * as Point2 from "./point2";
 
 export {
     Check,
     Singleton,
     Types,
     Queue,
-    Stack
+    Stack,
+    Point2
 };

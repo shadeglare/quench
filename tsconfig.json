@@ -24,6 +24,7 @@
         "check.ts",
         "index.ts",
         "queue.ts",
+        "point2.ts",
         "singleton.ts",
         "stack.ts",
         "types.ts"
