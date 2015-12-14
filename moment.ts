@@ -3,6 +3,12 @@ export type Month = number;
 export type Day = number;
 export type SmallDate = [Year, Month, Day];
 
+export interface DateAggregation {
+    years: number[];
+    months: number[][];
+    days: number[][][];
+}
+
 export function daysBetweenDates(begin: Date, end: Date): number {
     let oneDay = 24 * 60 * 60 * 1000;
     let diff = Math.abs(end.getTime() - begin.getTime());
@@ -77,4 +83,31 @@ export function range(start: SmallDate, steps: number): SmallDate[] {
     }
     
     return range;
+}
+
+export function toDateAggregation(dates: SmallDate[]): DateAggregation {
+    let result: DateAggregation = { years: [], months: [], days: [] };
+    
+    if (dates.length !== 0) {
+        let currentYear = null as number, currentYearIndex = -1;
+        let currentMonth = null as number, currentMonthIndex = -1;
+        
+        for (let date of dates) {
+            if (year(date) !== currentYear) {
+                currentYear = year(date), currentYearIndex = currentYearIndex + 1;
+                currentMonth = month(date), currentMonthIndex = 0;
+                result.years.push(currentYear);
+                result.months.push([currentMonth]);
+                result.days.push([[day(date)]]);
+            } else if (month(date) !== currentMonth) {
+                currentMonth = month(date), currentMonthIndex = currentMonthIndex + 1;
+                result.months[currentYearIndex].push(currentMonth);
+                result.days[currentYearIndex].push([day(date)]);
+            } else {
+                result.days[currentYearIndex][currentMonthIndex].push(day(date));
+            }
+        }
+    }
+
+    return result;
 }
