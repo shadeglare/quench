@@ -1,4 +1,5 @@
 import * as _ from "./extensions";
+import * as Moment from "./moment";
 
 import * as Check from "./check";
 import * as Singleton from "./singleton";

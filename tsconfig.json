@@ -23,6 +23,7 @@
     "files": [
         "types.ts",
         "extensions.ts",
+        "moment.ts",
         "check.ts",
         "index.ts",
         "queue.ts",

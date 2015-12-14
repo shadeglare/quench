@@ -27,7 +27,3 @@ export function countWhile<T>(xs: T[], callback: (x: T, i: number) => boolean): 
     });
     return count;
 }
-
-export function daysInMonth(year: number, month: number): number {
-    return new Date(year, month, 0).getDate();
-}
