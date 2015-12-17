@@ -2,6 +2,14 @@ export function id<T>(x: T): T {
     return x;
 }
 
+export function trunc(value: number): number {
+    return value < 0 ? (-Math.floor(-value)) : Math.floor(value);
+}
+
+export function isInteger(value: number): boolean {
+    return isFinite(value) && Math.abs(value) === value;
+}
+
 export function takeWhile<T>(xs: T[], callback: (x: T, i: number) => boolean): T[] {
     let acc: T[] = [];
     xs.some((x, i) => {
